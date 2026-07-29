@@ -1,0 +1,126 @@
+<main class="site-shell">
+  <header class="topbar">
+    <a class="brand" href="#home">arha.archive ↗</a>
+    <nav class="topnav" aria-label="Section navigation">
+      <% @sections.each do |section| %>
+        <a href="#<%= section[:key] %>"><%= section[:label] %></a>
+      <% end %>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <img src="<%= @hero_image %>" alt="people crossing the street at night" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>arha.archive</h1>
+      <div class="hero-links">
+        <% @sections.each do |section| %>
+          <a href="#<%= section[:key] %>"><%= section[:label] %></a>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section id="work" class="panel panel-light">
+    <h2>Work</h2>
+    <div class="list-table">
+      <% @work.each do |item| %>
+        <div class="list-row">
+          <span class="meta-year"><%= item[:year] %></span>
+          <span class="title"><%= item[:title] %></span>
+          <span class="meta"><%= item[:type] %></span>
+          <span class="meta"><%= item[:location] %></span>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section id="events" class="panel panel-dark">
+    <h2>Events</h2>
+    <div class="list-table list-table-dark">
+      <% @events.each do |event| %>
+        <div class="list-row">
+          <span class="meta-year accent"><%= event[:date] %></span>
+          <div class="event-copy">
+            <div class="title"><%= event[:title] %></div>
+            <div class="meta"><%= event[:venue] %></div>
+          </div>
+          <span class="meta"><%= event[:city] %></span>
+        </div>
+      <% end %>
+    </div>
+    <p class="footer-note">past dates → archive</p>
+  </section>
+
+  <section id="now" class="panel panel-light">
+    <h2>Now</h2>
+    <p class="eyebrow">what i'm into at the moment — updated irregularly</p>
+    <div class="cards">
+      <div class="card">
+        <h3>Film</h3>
+        <% @now[:film].each do |item| %>
+          <div class="card-item">
+            <div class="title italic"><%= item[:title] %></div>
+            <div class="meta"><%= item[:dir] %> · <%= item[:year] %></div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="card">
+        <h3>Books</h3>
+        <% @now[:books].each do |item| %>
+          <div class="card-item">
+            <div class="title italic"><%= item[:title] %></div>
+            <div class="meta"><%= item[:author] %></div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="card">
+        <h3>Music</h3>
+        <% @now[:music].each do |item| %>
+          <div class="card-item">
+            <div class="title"><%= item[:title] %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <section id="archive" class="panel panel-dark">
+    <h2>arha.archive</h2>
+    <div class="list-table list-table-dark">
+      <% @archive.each do |item| %>
+        <div class="list-row">
+          <span class="meta-year accent"><%= item[:year] %></span>
+          <span class="title"><%= item[:title] %></span>
+          <span class="meta uppercase"><%= item[:type] %></span>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section id="contact" class="panel panel-light contact-panel">
+    <h2>Contact</h2>
+    <div class="contact-grid">
+      <div>
+        <h3>Direct</h3>
+        <a class="contact-link" href="mailto:hello@yourname.com">hello@yourname.com ↗</a>
+        <p class="meta">bookings, collabs, questions</p>
+      </div>
+      <div>
+        <h3>Elsewhere</h3>
+        <a href="#">Bandcamp ↗</a>
+        <a href="#">SoundCloud ↗</a>
+        <a href="#">Letterboxd ↗</a>
+        <a href="#">Are.na ↗</a>
+      </div>
+      <div>
+        <h3>Based</h3>
+        <p class="title">Berlin, DE</p>
+        <p class="meta">available for travel</p>
+      </div>
+    </div>
+    <p class="footer-note">fuck m*ta</p>
+  </section>
+</main>

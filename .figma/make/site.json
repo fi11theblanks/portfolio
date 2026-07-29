@@ -1,0 +1,10 @@
+{
+  "description": "Showcase your creative work, share events, and archive favorite media like films, books, and music in a personalized online portfolio.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
