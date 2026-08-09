@@ -1,0 +1,16 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'pages/work', media: 'all' %>
+<% end %>
+
+<section>
+  <h1 class="page-title">work</h1>
+  <div class="page-cards">
+    <% @work.each do |item| %>
+      <div class="card">
+        <h3><%= item[:title] %></h3>
+        <p class="page-list-meta"><%= item[:type] %></p>
+        <p class="page-list-meta"><%= item[:year] %> · <%= item[:location] %></p>
+      </div>
+    <% end %>
+  </div>
+</section>

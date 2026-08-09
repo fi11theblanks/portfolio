@@ -23,6 +23,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="site-header">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="<%= about_path %>">About</a>
+        <a href="<%= work_path %>">Work</a>
+        <a href="<%= events_path %>">Events</a>
+        <a href="<%= now_path %>">Now</a>
+        <a href="<%= contact_path %>">Contact</a>
+      </nav>
+    </header>
+
+    <main class="page-main">
+      <%= yield %>
+    </main>
   </body>
 </html>

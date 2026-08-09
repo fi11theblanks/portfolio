@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# arha: Personal webpage
 
-Things you may want to cover:
+Simple personal site. No install required.
 
-* Ruby version
+1. Install gems
 
-* System dependencies
+```bash
+bundle install
+```
 
-* Configuration
+2. (Optional) Install frontend deps
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```bash
+pnpm install    # or npm install
+```

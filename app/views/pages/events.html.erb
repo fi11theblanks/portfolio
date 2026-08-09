@@ -1,0 +1,18 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'pages/events', media: 'all' %>
+<% end %>
+
+<section>
+  <h1 class="page-title">Events</h1>
+  <div class="page-list">
+    <% @events.each do |event| %>
+      <div class="page-list-item">
+        <div>
+          <p class="page-list-title"><%= event[:title] %></p>
+          <p class="page-list-meta"><%= event[:venue] %></p>
+        </div>
+        <div class="page-list-meta"><%= event[:date] %> · <%= event[:city] %></div>
+      </div>
+    <% end %>
+  </div>
+</section>
