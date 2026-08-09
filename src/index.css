@@ -20,7 +20,7 @@
 
 html {
   background: #0d0d0d;
-  color: #609456;
+  color: #f2efe9;
   font-family: 'Fragment Mono', monospace;
   font-size: 13px;
   line-height: 1.6;
@@ -28,8 +28,8 @@ html {
 }
 
 ::selection {
-  background: #c8ff00;
-  color: #0d0d0d;
+  background: var(--color-acid);
+  color: var(--color-acid);
 }
 
 a {

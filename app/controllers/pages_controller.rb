@@ -1,13 +1,38 @@
 class PagesController < ApplicationController
-  def home
-    @sections = [
-      { key: "work", label: "work" },
-      { key: "events", label: "events" },
-      { key: "now", label: "now" },
-      { key: "archive", label: "archive" },
-      { key: "contact", label: "contact" }
-    ]
+  before_action :set_content
 
+  def landing
+  end
+
+  def about
+  end
+
+  def work
+  end
+
+  def events
+  end
+
+  CONTACT_EMAIL = "aydaselen.pilanci@gmail.com".freeze
+
+  def now
+  end
+
+  def contact
+  end
+
+  def send_contact
+    name = params[:name].to_s.strip
+    subject = params[:subject].to_s.strip.presence || "Message from arha.archive"
+    body = params[:message].to_s.strip
+
+    mailto = "mailto:#{CONTACT_EMAIL}?subject=#{CGI.escape(subject)}&body=#{CGI.escape("#{name}\n\n#{body}")}".html_safe
+    redirect_to mailto
+  end
+
+  private
+
+  def set_content
     @hero_image = "/hero.jpg"
 
     @work = [
@@ -20,16 +45,14 @@ class PagesController < ApplicationController
     ]
 
     @events = [
-      { date: "Aug 09", title: "Workshop: Feedback Loops", venue: "CTM Festival", city: "Berlin" },
-      { date: "Aug 22", title: "Live Set", venue: "Tresor", city: "Berlin" },
-      { date: "Sep 14", title: "Panel: DIY Distribution", venue: "Unsound", city: "Kraków" },
-      { date: "Oct 03", title: "Residency Open Studio", venue: "Monom", city: "Berlin" }
+      { date: "soon", title: "coming soon", venue: "somewhere", city: "tblisi" }
     ]
 
     @now = {
       film: [
-        { title: "Pulse (Cairo)", dir: "Kiyoshi Kurasawa", year: "1999" },
-        { title: "In the Mood for Love", dir: "Wong Kar-wai", year: "2000" }
+        { title: "Retribution", dir: "Kiyoshi Kurasawa", year: "2006" },
+        { title: "A Scanner Darkly", dir: "Richard Linklater", year: "2006" },
+        { title: "Hackers", dir: "John Brumby", year: "1995" }
       ],
       books: [
         { title: "Tombs of Atuan", author: "Ursula K. Le Guin" },
@@ -43,7 +66,7 @@ class PagesController < ApplicationController
       ]
     }
 
-    @archive = [
+    @friends = [
       { year: "2022", title: "Tape Loop Evening", type: "event" },
       { year: "2022", title: "Collaborations Vol. 2", type: "release" },
       { year: "2021", title: "RADIO PIECE #001", type: "media" },

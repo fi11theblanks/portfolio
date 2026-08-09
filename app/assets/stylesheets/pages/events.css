@@ -1,0 +1,22 @@
+.page-list {
+  margin-top: 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.page-list-item {
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(18, 17, 17, 0.15);
+  border-radius: 16px;
+  background: rgba(18,17,17,0.06);
+}
+
+.page-list-title {
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.page-list-meta {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}

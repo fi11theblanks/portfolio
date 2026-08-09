@@ -1,0 +1,24 @@
+<section>
+  <h1 class="page-title">Now</h1>
+  <p class="page-text">current favorites.</p>
+  <div class="page-cards">
+    <div class="card">
+      <h3>Film</h3>
+      <% @now[:film].each do |item| %>
+        <p class="card-text"><strong><%= item[:title] %></strong> — <%= item[:dir] %> (<%= item[:year] %>)</p>
+      <% end %>
+    </div>
+    <div class="card">
+      <h3>Books</h3>
+      <% @now[:books].each do |item| %>
+        <p class="card-text"><strong><%= item[:title] %></strong> — <%= item[:author] %></p>
+      <% end %>
+    </div>
+    <div class="card">
+      <h3>Music</h3>
+      <% @now[:music].each do |item| %>
+        <p class="card-text"><%= item[:title] %></p>
+      <% end %>
+    </div>
+  </div>
+</section>
