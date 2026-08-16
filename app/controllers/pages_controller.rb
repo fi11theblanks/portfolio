@@ -5,9 +5,13 @@ class PagesController < ApplicationController
   end
 
   def about
+    render :landing
   end
 
   def work
+  end
+
+  def poems
   end
 
   def events
@@ -36,12 +40,12 @@ class PagesController < ApplicationController
     @hero_image = "/hero.jpg"
 
     @work = [
-      { year: "2026", title: "Entrika - Reading the Fine Print", type: "Web Application & Browser Extension", location: "Meguro, Tokyo" },
-      { year: "2026", title: "Am I the Villain?", type: "Web Application", location: "Meguro, Tokyo" },
-      { year: "2026", title: "Resident @ OUCH - Exhibition", type: "Installation", location: "Zollgarage, Berlin" },
-      { year: "2023", title: "Live Painting for Earthquake Relief Event", type: "Performance w/ Batikan Kilicaslan", location: "Gazhane Museum, Istanbul" },
-      { year: "2022", title: "Photographer - Altin Gun", type: "Commission Work", location: "Kucukciftlik Park, Istanbul" },
-      { year: "2022", title: "Photographer - Franz Ferdinand", type: "Commission Work", location: "LifePark, Istanbul" }
+      { year: "2026", title: "Entrika - Reading the Fine Print", type: "Web Application & Browser Extension", location: "Meguro, Tokyo", description: "A browser-based reading interface and extension for parsing dense language and context in public discourse.", photo: "" },
+      { year: "2026", title: "Am I the Villain?", type: "Web Application", location: "Meguro, Tokyo", description: "An interactive web project exploring uncertainty, causality, and narrative framing.", photo: "" },
+      { year: "2026", title: "OUCH @ Zollgarage - Exhibition", type: "Installation", location: "Zollgarage, Berlin", description: "A spatial installation and live presentation exploring sound, material memory, and public attention.", photo: "" },
+      { year: "2023", title: "Live Painting for Earthquake Relief Event", type: "Performance w/ Batikan Kilicaslan", location: "Gazhane Museum, Istanbul", description: "A live painting performance staged as a communal act of response and care.", photo: "" },
+      { year: "2022", title: "Photographer - Altin Gun", type: "Commission Work", location: "Kucukciftlik Park, Istanbul", description: "Commissioned photographic work for a live performance setting and visual documentation.", photo: "" },
+      { year: "2022", title: "Photographer - Franz Ferdinand", type: "Commission Work", location: "LifePark, Istanbul", description: "A commissioned shoot centered on atmosphere, movement, and audience presence.", photo: "" }
     ]
 
     @events = [
@@ -51,8 +55,7 @@ class PagesController < ApplicationController
     @now = {
       film: [
         { title: "Retribution", dir: "Kiyoshi Kurasawa", year: "2006" },
-        { title: "A Scanner Darkly", dir: "Richard Linklater", year: "2006" },
-        { title: "Hackers", dir: "John Brumby", year: "1995" }
+        { title: "A Scanner Darkly", dir: "Richard Linklater", year: "2006" }
       ],
       books: [
         { title: "Tombs of Atuan", author: "Ursula K. Le Guin" },

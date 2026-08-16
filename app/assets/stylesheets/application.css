@@ -2,95 +2,23 @@
 
 :root {
   color-scheme: dark;
-  --acid: #a1c767;
-  --black: #121311;
+  --acid: #f5ff47;
+  --black: #000000;
   --dust: #a8a49e;
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--acid); color: var(--black); font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 24px; line-height: 1.6; cursor: crosshair; }
-body { margin: 0; background: var(--acid); }
+html { scroll-behavior: smooth; background: var(--black); color: var(--acid); font-family: 'Comic Sans MS', 'Comic Sans', cursive; font-size: 24px; line-height: 1.6; cursor: crosshair; }
+body { margin: 0; background: var(--black); color: var(--acid); }
 a { color: inherit; text-decoration: none; }
-::selection { background: var(--black); color: var(--acid); }
+::selection { background: var(--acid); color: var(--black); }
 ::-webkit-scrollbar { display: none; }
 * { scrollbar-width: none; }
-
-.site-shell { min-height: 100vh; }
-.topbar {
-  position: fixed; inset: 0 0 auto 0; z-index: 20;
-  display: flex; justify-content: space-between; align-items: baseline;
-  padding: 1rem 1.25rem;
-  mix-blend-mode: difference;
-}
-.brand, .topnav a, .hero-links a {
-  color: var(--acid);
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-size: 0.72rem;
-}
-.topnav { display: flex; gap: 1.5rem; }
-.hero {
-  position: relative; min-height: 100vh; overflow: hidden;
-  display: flex; align-items: end; justify-content: space-between;
-  padding: 5rem 1.25rem 1.5rem;
-}
-.hero img {
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: grayscale(20%) contrast(1.05);
-}
-.hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(13,13,13,0.65) 0%, transparent 100%);
-}
-.hero-content {
-  position: relative; z-index: 1; width: 100%; display: flex; justify-content: space-between; align-items: end; gap: 1rem;
-}
-.hero h1 {
-  margin: 0; color: var(--acid); font-family: 'Comic Neue', sans-serif; font-size: clamp(2.8rem, 7vw, 6rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.02em;
-}
-.hero-links {
-  display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem;
-}
-.panel { padding: 6rem 1.25rem 5rem; min-height: 100vh; }
-.panel-light { background: var(--black); color: var(--acid); }
-.panel-dark { background: var(--acid); color: var(--black); }
-.panel h2 {
-  margin: 0 0 2.5rem;
-  font-family: 'Comic Neue', sans-serif; font-size: clamp(3rem, 8vw, 7rem); font-weight: 900; line-height: 0.9; letter-spacing: -0.02em;
-}
-.panel-dark h2 { color: var(--acid); }
-.list-table { border-top: 1px solid rgba(13,13,13,0.2); }
-.list-table-dark { border-top: 1px solid rgba(242,239,233,0.15); }
-.list-row {
-  display: grid; grid-template-columns: 4rem 1fr auto auto; gap: 1.5rem; align-items: baseline;
-  padding: 0.9rem 0; border-bottom: 1px solid rgba(13,13,13,0.12);
-}
-.list-table-dark .list-row { border-color: rgba(242,239,233,0.15); }
-.meta, .meta-year, .footer-note, .eyebrow, .card-item .meta, .contact-panel a, .contact-panel p { font-family: 'Comic Neue', monospace; font-size: 0.65rem; letter-spacing: 0.02em; opacity: 0.6; }
-.meta-year { opacity: 0.5; }
-.title { font-family: 'Comic Neue', serif; font-size: 1.1rem; }
-.list-table-dark .title { font-size: 1.15rem; }
-.accent { color: var(--acid); }
-.italic { font-style: italic; }
-.uppercase { text-transform: uppercase; letter-spacing: 0.12em; }
-.event-copy { display: flex; flex-direction: column; gap: 0.1rem; }
-.cards { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-.card { display: flex; flex-direction: column; gap: 0.6rem; }
-.card h3 { margin: 0 0 0.7rem; padding-bottom: 0.45rem; border-bottom: 1px solid rgba(13,13,13,0.2); text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.2em; }
-.panel-dark .card h3 { border-color: rgba(242,239,233,0.2); }
-.card-item { display: flex; flex-direction: column; gap: 0.15rem; }
-.contact-panel { display: flex; flex-direction: column; justify-content: space-between; }
-.contact-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-.contact-panel h3 { margin: 0 0 0.8rem; padding-bottom: 0.45rem; border-bottom: 1px solid rgba(13,13,13,0.2); text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.2em; }
-.contact-panel a { display: block; margin-bottom: 0.35rem; opacity: 1; }
-.footer-note { margin-top: 2.5rem; opacity: 0.35; }
 
 @media (max-width: 760px) {
   .site-header { flex-direction: column; gap: 0.8rem; }
   .site-nav { flex-wrap: wrap; gap: 0.8rem; }
-  .hero { min-height: 60vh; padding-top: 8rem; }
-  .hero-content { flex-direction: column; align-items: start; gap: 1rem; }
-  .hero-links { align-items: start; }
-  .page-grid { grid-template-columns: 1fr; }
+  .page-main { padding-top: 7rem; }
 }
 
 .page-main {
@@ -107,6 +35,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 1rem 1.25rem;
   background: rgba(13,13,13,0.95);
   backdrop-filter: blur(10px);
@@ -118,10 +47,23 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
 }
 
+.header-poems-link {
+  margin-left: auto;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.8rem;
+  color: var(--acid);
+}
+
 .page-title {
   margin: 0 0 1rem;
-  font-size: clamp(3rem, 6vw, 5rem);
-  letter-spacing: -0.05em;
+  max-width: 16ch;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: clamp(2.2rem, 4.5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
 }
 
 .page-subtitle,
@@ -145,13 +87,28 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(161,199,103,0.15);
   padding: 1.5rem;
   border-radius: 16px;
+  color: inherit;
+  text-align: left;
+}
+
+.work-trigger {
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.work-trigger:hover {
+  transform: translateY(-1px);
+  border-color: rgba(245, 255, 71, 0.5);
 }
 
 .card h3 {
   margin: 0 0 0.75rem;
-  font-size: 1rem;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
 }
 
 .page-list {
@@ -166,17 +123,113 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   justify-content: space-between;
   gap: 1rem;
+  width: 100%;
   padding: 1rem 0;
+  border: 0;
   border-bottom: 1px solid rgba(161,199,103,0.08);
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
 }
 
 .page-list-item:last-child {
   border-bottom: none;
 }
 
+.page-list-item:hover {
+  opacity: 0.9;
+}
+
 .page-list-title {
   font-size: 1rem;
   font-weight: 700;
+}
+
+.poem-modal,
+.work-modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 100;
+}
+
+.poem-modal.is-open,
+.work-modal.is-open {
+  display: block;
+}
+
+.poem-modal-backdrop,
+.work-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.poem-modal-card,
+.work-modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(680px, calc(100vw - 2rem));
+  margin: 8vh auto 0;
+  padding: 2rem 1.5rem 1.5rem;
+  background: #000000;
+  border: 1px solid rgba(245, 255, 71, 0.35);
+  box-shadow: 0 0 0 1px rgba(245, 255, 71, 0.15);
+}
+
+.poem-modal-close,
+.work-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: 0;
+  background: transparent;
+  color: var(--acid);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.poem-modal-meta,
+.work-modal-meta {
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.poem-modal-card h2,
+.work-modal-card h2 {
+  margin: 0 0 1rem;
+  max-width: 12ch;
+  font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.06em;
+  text-transform: uppercase;
+}
+
+.poem-modal-body,
+.work-modal-description {
+  white-space: pre-line;
+  line-height: 1.9;
+  opacity: 0.9;
+}
+
+.work-modal-photo-wrap {
+  display: none;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(245, 255, 71, 0.25);
+  background: rgba(245, 255, 71, 0.04);
+}
+
+.work-modal-photo-wrap img {
+  display: block;
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
 }
 
 .page-list-meta {

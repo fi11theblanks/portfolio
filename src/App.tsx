@@ -133,24 +133,24 @@ function Home({ go }: { go: (s: Section) => void }) {
 
 function Work() {
   return (
-    <section className="min-h-screen px-5 pt-24 pb-20" style={{ background: '#f2efe9', color: '#0d0d0d' }}>
+    <section className="min-h-screen px-5 pt-24 pb-20" style={{ background: '#000000', color: '#f5ff47' }}>
       <h2
         className="mb-10"
-        style={{ fontFamily: 'Big Shoulders Display, sans-serif', fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.02em' }}
+        style={{ fontFamily: 'Big Shoulders Display, sans-serif', fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.02em', color: '#f5ff47' }}
       >
         Work
       </h2>
-      <div className="border-t border-[#0d0d0d]">
+      <div className="border-t border-[#f5ff47] border-opacity-70">
         {work.map((item, i) => (
           <div
             key={i}
-            className="grid border-b border-[#0d0d0d] py-4 group cursor-pointer hover:bg-[#0d0d0d] hover:text-[#f2efe9] transition-colors duration-150"
+            className="grid border-b border-[#f5ff47] border-opacity-30 py-4 group cursor-pointer hover:bg-[#f5ff47] hover:text-[#000000] transition-colors duration-150"
             style={{ gridTemplateColumns: '4rem 1fr auto auto', gap: '1.5rem', alignItems: 'baseline' }}
           >
-            <span style={{ fontFamily: 'Fragment Mono', fontSize: '0.7rem', opacity: 0.5 }}>{item.year}</span>
+            <span style={{ fontFamily: 'Fragment Mono', fontSize: '0.7rem', opacity: 0.8 }}>{item.year}</span>
             <span style={{ fontFamily: 'Instrument Serif, serif', fontSize: '1.15rem' }}>{item.title}</span>
-            <span style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.5, whiteSpace: 'nowrap' }}>{item.type}</span>
-            <span style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.5, whiteSpace: 'nowrap' }}>{item.location}</span>
+            <span style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.8, whiteSpace: 'nowrap' }}>{item.type}</span>
+            <span style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.8, whiteSpace: 'nowrap' }}>{item.location}</span>
           </div>
         ))}
       </div>
@@ -196,47 +196,47 @@ function Events() {
 
 function Now() {
   return (
-    <section className="min-h-screen px-5 pt-24 pb-20" style={{ background: '#f2efe9', color: '#0d0d0d' }}>
+    <section className="min-h-screen px-5 pt-24 pb-20" style={{ background: '#000000', color: '#f5ff47' }}>
       <h2
         className="mb-2"
-        style={{ fontFamily: 'Big Shoulders Display, sans-serif', fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.02em' }}
+        style={{ fontFamily: 'Big Shoulders Display, sans-serif', fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.02em', color: '#f5ff47' }}
       >
         Now
       </h2>
-      <p className="mb-12" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.4 }}>
+      <p className="mb-12" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.7 }}>
         what i'm into at the moment — updated irregularly
       </p>
 
       <div className="grid gap-12" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))' }}>
         {/* film */}
         <div>
-          <h3 className="border-b border-[#0d0d0d] pb-2 mb-5 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em' }}>
+          <h3 className="border-b border-[#f5ff47] pb-2 mb-5 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#f5ff47' }}>
             Film
           </h3>
           {now.film.map((f, i) => (
             <div key={i} className="mb-4">
               <div style={{ fontFamily: 'Instrument Serif, serif', fontSize: '1rem', fontStyle: 'italic' }}>{f.title}</div>
-              <div style={{ fontFamily: 'Fragment Mono', fontSize: '0.62rem', opacity: 0.45 }}>{f.dir} · {f.year}</div>
+              <div style={{ fontFamily: 'Fragment Mono', fontSize: '0.62rem', opacity: 0.7 }}>{f.dir} · {f.year}</div>
             </div>
           ))}
         </div>
 
         {/* books */}
         <div>
-          <h3 className="border-b border-[#0d0d0d] pb-2 mb-5 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em' }}>
+          <h3 className="border-b border-[#f5ff47] pb-2 mb-5 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#f5ff47' }}>
             Books
           </h3>
           {now.books.map((b, i) => (
             <div key={i} className="mb-4">
               <div style={{ fontFamily: 'Instrument Serif, serif', fontSize: '1rem', fontStyle: 'italic' }}>{b.title}</div>
-              <div style={{ fontFamily: 'Fragment Mono', fontSize: '0.62rem', opacity: 0.45 }}>{b.author}</div>
+              <div style={{ fontFamily: 'Fragment Mono', fontSize: '0.62rem', opacity: 0.7 }}>{b.author}</div>
             </div>
           ))}
         </div>
 
         {/* music */}
         <div>
-          <h3 className="border-b border-[#0d0d0d] pb-2 mb-5 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em' }}>
+          <h3 className="border-b border-[#f5ff47] pb-2 mb-5 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#f5ff47' }}>
             Music
           </h3>
           {now.music.map((m, i) => (
@@ -326,11 +326,11 @@ function Archive() {
 
 function Contact() {
   return (
-    <section className="min-h-screen px-5 pt-24 pb-20 flex flex-col justify-between" style={{ background: '#f2efe9', color: '#0d0d0d' }}>
+    <section className="min-h-screen px-5 pt-24 pb-20 flex flex-col justify-between" style={{ background: '#000000', color: '#f5ff47' }}>
       <div>
         <h2
           className="mb-16"
-          style={{ fontFamily: 'Big Shoulders Display, sans-serif', fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.02em' }}
+          style={{ fontFamily: 'Big Shoulders Display, sans-serif', fontSize: 'clamp(3rem, 8vw, 7rem)', fontWeight: 900, lineHeight: 0.9, letterSpacing: '-0.02em', color: '#f5ff47' }}
         >
           Contact
         </h2>
@@ -338,24 +338,24 @@ function Contact() {
         <div className="grid gap-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))' }}>
           {/* direct */}
           <div>
-            <h3 className="border-b border-[#0d0d0d] pb-2 mb-6 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em' }}>
+            <h3 className="border-b border-[#f5ff47] pb-2 mb-6 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#f5ff47' }}>
               Direct
             </h3>
             <a
               href="mailto:hello@yourname.com"
-              className="block hover:text-[#c8ff00] hover:bg-[#0d0d0d] -mx-2 px-2 py-1 transition-colors duration-150"
+              className="block hover:text-[#000000] hover:bg-[#f5ff47] -mx-2 px-2 py-1 transition-colors duration-150"
               style={{ fontFamily: 'Instrument Serif, serif', fontSize: '1.1rem', fontStyle: 'italic' }}
             >
               hello@yourname.com ↗
             </a>
-            <p className="mt-3" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.4 }}>
+            <p className="mt-3" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.7 }}>
               bookings, collabs, questions
             </p>
           </div>
 
           {/* elsewhere */}
           <div>
-            <h3 className="border-b border-[#0d0d0d] pb-2 mb-6 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em' }}>
+            <h3 className="border-b border-[#f5ff47] pb-2 mb-6 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#f5ff47' }}>
               Elsewhere
             </h3>
             {[
@@ -367,29 +367,29 @@ function Contact() {
               <a
                 key={label}
                 href={href}
-                className="flex items-baseline justify-between border-b py-3 hover:bg-[#0d0d0d] hover:text-[#f2efe9] -mx-2 px-2 transition-colors duration-150 group"
-                style={{ borderColor: 'rgba(13,13,13,0.12)' }}
+                className="flex items-baseline justify-between border-b py-3 hover:bg-[#f5ff47] hover:text-[#000000] -mx-2 px-2 transition-colors duration-150 group"
+                style={{ borderColor: 'rgba(245,255,71,0.35)' }}
               >
                 <span style={{ fontFamily: 'Instrument Serif, serif', fontSize: '1rem' }}>{label}</span>
-                <span style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.4 }} className="group-hover:opacity-100">↗</span>
+                <span style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.7 }} className="group-hover:opacity-100">↗</span>
               </a>
             ))}
           </div>
 
           {/* based */}
           <div>
-            <h3 className="border-b border-[#0d0d0d] pb-2 mb-6 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em' }}>
+            <h3 className="border-b border-[#f5ff47] pb-2 mb-6 uppercase" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', letterSpacing: '0.2em', color: '#f5ff47' }}>
               Based
             </h3>
             <p style={{ fontFamily: 'Instrument Serif, serif', fontSize: '1.1rem' }}>Berlin, DE</p>
-            <p className="mt-1" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.4 }}>
+            <p className="mt-1" style={{ fontFamily: 'Fragment Mono', fontSize: '0.65rem', opacity: 0.7 }}>
               available for travel
             </p>
           </div>
         </div>
       </div>
 
-      <p style={{ fontFamily: 'Fragment Mono', fontSize: '0.6rem', opacity: 0.25 }}>
+      <p style={{ fontFamily: 'Fragment Mono', fontSize: '0.6rem', opacity: 0.6 }}>
         no instagram. this is the place.
       </p>
     </section>

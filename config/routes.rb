@@ -3,8 +3,9 @@ Rails.application.routes.draw do
 
   root "pages#landing"
   get "/landing" => "pages#landing", as: :landing
-  get "/about" => "pages#about", as: :about
+  get "/about" => "pages#landing", as: :about
   get "/work" => "pages#work", as: :work
+  get "/poems" => "pages#poems", as: :poems
   get "/events" => "pages#events", as: :events
   get "/now" => "pages#now", as: :now
   get "/contact" => "pages#contact", as: :contact
