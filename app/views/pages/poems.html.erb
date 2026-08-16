@@ -1,0 +1,84 @@
+<section>
+  <h1 class="page-title">poems</h1>
+  <p class="page-text">a few fragments, notes, and unfinished lines.</p>
+
+  <div class="page-list poems-list">
+    <button type="button" class="page-list-item poem-trigger" data-title="night hum" data-year="2026" data-body="the city keeps a low electric breath / in every window a small private weather / I carry my own static / and call it home">
+      <div>
+        <div class="page-list-title">night hum</div>
+        <div class="page-list-meta">draft</div>
+      </div>
+      <div class="page-list-meta">2026</div>
+    </button>
+
+    <button type="button" class="page-list-item poem-trigger" data-title="glass weather" data-year="2025" data-body="the morning arrives in broken panes / each reflection a modest betrayal / the sky keeps shining anyway / and I keep listening for the crack">
+      <div>
+        <div class="page-list-title">glass weather</div>
+        <div class="page-list-meta">fragment</div>
+      </div>
+      <div class="page-list-meta">2025</div>
+    </button>
+
+    <button type="button" class="page-list-item poem-trigger" data-title="signal under the skin" data-year="2024" data-body="there is a pulse under the pavement / someone is learning to be heard / I keep my hands warm with static / and wait for the signal to become language">
+      <div>
+        <div class="page-list-title">signal under the skin</div>
+        <div class="page-list-meta">unfinished</div>
+      </div>
+      <div class="page-list-meta">2024</div>
+    </button>
+  </div>
+</section>
+
+<div class="poem-modal" id="poem-modal" aria-hidden="true">
+  <div class="poem-modal-backdrop" data-close="true"></div>
+  <div class="poem-modal-card" role="dialog" aria-modal="true" aria-labelledby="poem-modal-title">
+    <button class="poem-modal-close" type="button" aria-label="Close poem">×</button>
+    <div class="poem-modal-meta" id="poem-modal-year"></div>
+    <h2 id="poem-modal-title"></h2>
+    <div class="poem-modal-body" id="poem-modal-body"></div>
+  </div>
+</div>
+
+<script>
+  const poemModal = document.getElementById('poem-modal');
+  const poemTitle = document.getElementById('poem-modal-title');
+  const poemYear = document.getElementById('poem-modal-year');
+  const poemBody = document.getElementById('poem-modal-body');
+  const triggerButtons = document.querySelectorAll('.poem-trigger');
+
+  const openPoem = (title, year, body) => {
+    poemTitle.textContent = title;
+    poemYear.textContent = year;
+    poemBody.textContent = body;
+    poemModal.classList.add('is-open');
+    poemModal.setAttribute('aria-hidden', 'false');
+  };
+
+  const closePoem = () => {
+    poemModal.classList.remove('is-open');
+    poemModal.setAttribute('aria-hidden', 'true');
+  };
+
+  triggerButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      openPoem(
+        button.dataset.title,
+        button.dataset.year,
+        button.dataset.body
+      );
+    });
+  });
+
+  poemModal.addEventListener('click', (event) => {
+    if (event.target instanceof HTMLElement && event.target.dataset.close === 'true') {
+      closePoem();
+    }
+  });
+
+  document.querySelector('.poem-modal-close')?.addEventListener('click', closePoem);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && poemModal.classList.contains('is-open')) {
+      closePoem();
+    }
+  });
+</script>

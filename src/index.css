@@ -2,25 +2,13 @@
 
 @import 'tailwindcss';
 
-@theme {
-  --font-sans: 'Fragment Mono', monospace;
-  --font-display: 'Big Shoulders Display', sans-serif;
-  --font-serif: 'Instrument Serif', serif;
-  --font-mono: 'Fragment Mono', monospace;
-
-  --color-acid: #c8ff00;
-  --color-ink: #0d0d0d;
-  --color-paper: #f2efe9;
-  --color-dust: #a8a49e;
-}
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 html {
-  background: #0d0d0d;
-  color: #f2efe9;
+  background: #000000;
+  color: #f5ff47;
   font-family: 'Fragment Mono', monospace;
   font-size: 13px;
   line-height: 1.6;
@@ -28,8 +16,8 @@ html {
 }
 
 ::selection {
-  background: var(--color-acid);
-  color: var(--color-acid);
+  background: #f5ff47;
+  color: #000000;
 }
 
 a {
