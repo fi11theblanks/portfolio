@@ -37,7 +37,7 @@ class PagesController < ApplicationController
   private
 
   def set_content
-    @hero_image = "/hero.jpg"
+    @hero_image = "/hero.JPG"
 
     @work = [
       { year: "2026", title: "Entrika - Reading the Fine Print", type: "Web Application & Browser Extension", location: "Meguro, Tokyo", description: "A browser-based reading interface and extension for parsing dense language and context in public discourse.", photo: "/260605_DemoDay-9.jpg" },
