@@ -40,7 +40,7 @@ class PagesController < ApplicationController
     @hero_image = "/hero.jpg"
 
     @work = [
-      { year: "2026", title: "Entrika - Reading the Fine Print", type: "Web Application & Browser Extension", location: "Meguro, Tokyo", description: "A browser-based reading interface and extension for parsing dense language and context in public discourse.", photo: "" },
+      { year: "2026", title: "Entrika - Reading the Fine Print", type: "Web Application & Browser Extension", location: "Meguro, Tokyo", description: "A browser-based reading interface and extension for parsing dense language and context in public discourse.", photo: "/260605_DemoDay-9.jpg" },
       { year: "2026", title: "Am I the Villain?", type: "Web Application", location: "Meguro, Tokyo", description: "An interactive web project exploring uncertainty, causality, and narrative framing.", photo: "" },
       { year: "2026", title: "OUCH @ Zollgarage - Exhibition", type: "Installation", location: "Zollgarage, Berlin", description: "A spatial installation and live presentation exploring sound, material memory, and public attention.", photo: "" },
       { year: "2023", title: "Live Painting for Earthquake Relief Event", type: "Performance w/ Batikan Kilicaslan", location: "Gazhane Museum, Istanbul", description: "A live painting performance staged as a communal act of response and care.", photo: "" },

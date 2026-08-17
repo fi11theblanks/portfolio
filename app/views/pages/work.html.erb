@@ -16,9 +16,15 @@
         data-description="<%= item[:description].to_s %>"
         data-photo="<%= item[:photo].to_s %>"
       >
-        <h3><%= item[:title] %></h3>
-        <p class="page-list-meta"><%= item[:type] %></p>
-        <p class="page-list-meta"><%= item[:year] %> · <%= item[:location] %></p>
+        <div class="work-item-copy">
+          <h3><%= item[:title] %></h3>
+          <p class="page-list-meta"><%= item[:type] %></p>
+          <p class="page-list-meta"><%= item[:year] %> · <%= item[:location] %></p>
+        </div>
+
+        <% if item[:photo].to_s.present? %>
+          <img class="work-item-thumb" src="<%= item[:photo] %>" alt="<%= item[:title] %>" />
+        <% end %>
       </button>
     <% end %>
   </div>
@@ -33,7 +39,6 @@
     </div>
     <div class="work-modal-meta" id="work-modal-meta"></div>
     <h2 id="work-modal-title"></h2>
-    <div class="work-modal-description" id="work-modal-description"></div>
   </div>
 </div>
 
@@ -41,15 +46,13 @@
   const workModal = document.getElementById('work-modal');
   const workTitle = document.getElementById('work-modal-title');
   const workMeta = document.getElementById('work-modal-meta');
-  const workDescription = document.getElementById('work-modal-description');
   const workPhoto = document.getElementById('work-modal-photo');
   const workPhotoWrap = document.getElementById('work-modal-photo-wrap');
   const workTriggers = document.querySelectorAll('.work-trigger');
 
-  const openWork = (title, type, year, location, description, photo) => {
+  const openWork = (title, type, year, location, photo) => {
     workTitle.textContent = title;
     workMeta.textContent = `${type} · ${year} · ${location}`;
-    workDescription.textContent = description || 'No description added yet.';
 
     if (photo) {
       workPhoto.src = photo;
@@ -75,7 +78,6 @@
         button.dataset.type,
         button.dataset.year,
         button.dataset.location,
-        button.dataset.description,
         button.dataset.photo
       );
     });
