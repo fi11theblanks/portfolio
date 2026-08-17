@@ -2,7 +2,6 @@
   position: relative;
   min-height: 70vh;
   display: flex;
-  align-items: fill;
   justify-content: center;
   background-image: var(--hero-image);
   background-size: auto;
@@ -11,14 +10,22 @@
 }
 
 .hero-content .page-text {
+  color: blue;
+  background: linear-gradient(to right, aquamarine, lime);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: left;
   line-height: 1.4;
   margin: 0;
-  color: blue;
-  font-size: 2rem;
-  line-height: 1;
-  margin: 0;
+  font-size: 1rem;
+  z-index: 1;
+  position: relative;
+  max-width: 600px;
+  padding: 0 1rem;
 }
 
+/* Your existing link styles */
 .hero-links {
   display: flex;
   flex-wrap: wrap;
@@ -33,4 +40,5 @@
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
+  /* Optional: If links also need to invert, add mix-blend-mode: difference; and color: white; */
 }

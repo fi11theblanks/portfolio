@@ -62,8 +62,7 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(2.2rem, 4.5vw, 4.5rem);
   font-weight: 700;
   background-image: linear-gradient(to right, hotpink, orange, red);
- color: transparent;
-  -webkit-background-clip: text;
+  color: transparent; -webkit-background-clip: text;
   text-transform: lowercase;
 }
 
