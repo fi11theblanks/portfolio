@@ -12,9 +12,6 @@
 .hero-content .page-text {
   color: blue;
   background: linear-gradient(to right, aquamarine, lime);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-align: left;
   line-height: 1.4;
   margin: 0;
