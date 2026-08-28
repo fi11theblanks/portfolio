@@ -11,11 +11,7 @@
 
 .hero-content .page-text {
   color: blue;
-<<<<<<< Updated upstream
-  background: linear-gradient(to right, aquamarine, lime);
-=======
   background: linear-gradient(90deg, aquamarine, lime);
->>>>>>> Stashed changes
   text-align: left;
   line-height: 1.4;
   margin: 0;

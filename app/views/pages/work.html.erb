@@ -8,23 +8,20 @@
     <% @work.each do |item| %>
       <button
         type="button"
-        class="card work-trigger"
+        class="card work-trigger <%= 'work-trigger--with-photo' if item[:photo].to_s.present? %>"
+        style="<%= "background-image: url('#{item[:photo]}');" if item[:photo].to_s.present? %>"
         data-title="<%= item[:title] %>"
         data-type="<%= item[:type] %>"
         data-year="<%= item[:year] %>"
         data-location="<%= item[:location] %>"
-        data-description="<%= item[:description].to_s %>"
         data-photo="<%= item[:photo].to_s %>"
+        data-link="<%= item[:link].to_s %>"
       >
         <div class="work-item-copy">
           <h3><%= item[:title] %></h3>
           <p class="page-list-meta"><%= item[:type] %></p>
           <p class="page-list-meta"><%= item[:year] %> · <%= item[:location] %></p>
         </div>
-
-        <% if item[:photo].to_s.present? %>
-          <img class="work-item-thumb" src="<%= item[:photo] %>" alt="<%= item[:title] %>" />
-        <% end %>
       </button>
     <% end %>
   </div>
@@ -39,6 +36,7 @@
     </div>
     <div class="work-modal-meta" id="work-modal-meta"></div>
     <h2 id="work-modal-title"></h2>
+    <div class="work-modal-link-row" id="work-modal-link-row"></div>
   </div>
 </div>
 
@@ -46,13 +44,17 @@
   const workModal = document.getElementById('work-modal');
   const workTitle = document.getElementById('work-modal-title');
   const workMeta = document.getElementById('work-modal-meta');
+  const workLinkRow = document.getElementById('work-modal-link-row');
   const workPhoto = document.getElementById('work-modal-photo');
   const workPhotoWrap = document.getElementById('work-modal-photo-wrap');
   const workTriggers = document.querySelectorAll('.work-trigger');
 
-  const openWork = (title, type, year, location, photo) => {
+  const openWork = (title, type, year, location, photo, link) => {
     workTitle.textContent = title;
     workMeta.textContent = `${type} · ${year} · ${location}`;
+    workLinkRow.innerHTML = link
+      ? `<a href="${link}" target="_blank" rel="noopener noreferrer" aria-label="Open ${title} in a new tab">↗ open project</a>`
+      : '';
 
     if (photo) {
       workPhoto.src = photo;
@@ -78,7 +80,8 @@
         button.dataset.type,
         button.dataset.year,
         button.dataset.location,
-        button.dataset.photo
+        button.dataset.photo,
+        button.dataset.link
       );
     });
   });
