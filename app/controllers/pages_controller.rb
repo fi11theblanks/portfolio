@@ -40,7 +40,7 @@ class PagesController < ApplicationController
     @hero_image = "/hero.JPG"
 
     @work = [
-      { year: "2026", title: "Entrika - Reading the Fine Print", type: "Web Application & Browser Extension", location: "Meguro, Tokyo", photo: "entrika_youtube.png", link: "https://entrika.online" },
+      { year: "2026", title: "Entrika - Reading the Fine Print", type: "Web Application & Browser Extension", location: "Meguro, Tokyo", photo: "260605_DemoDay-9.jpg", link: "https://entrika.online" },
       { year: "2026", title: "Am I the Villain?", type: "Web Application", location: "Meguro, Tokyo", photo: "am_I_the_villain.png", link: "https://who-is-the-villain-lhordes-1a13aa3df7f5.herokuapp.com" },
       { year: "2026", title: "OUCH @ Zollgarage - Exhibition", type: "Installation", location: "Zollgarage, Berlin", photo: "ouch.png", link: "https://example.com/ouch" },
       { year: "2023", title: "Live Painting for Earthquake Relief Event", type: "Performance w/ Batikan Kilicaslan", location: "Gazhane Museum, Istanbul", photo: "", link: "" },
