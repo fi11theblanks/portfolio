@@ -1,15 +1,22 @@
 <section>
   <h1 class="page-title">poems</h1>
-  <p class="page-text">empty for now.</p>
 
   <div class="page-list poems-list">
-    <button type="button" class="page-list-item poem-trigger" data-title="untitled" data-year="" data-body="">
-      <div>
-        <div class="page-list-title">untitled</div>
-        <div class="page-list-meta">add a poem</div>
-      </div>
-      <div class="page-list-meta">—</div>
-    </button>
+    <% @poems.each do |poem| %>
+      <button
+        type="button"
+        class="page-list-item poem-trigger"
+        data-title="<%= poem[:title] %>"
+        data-year="<%= poem[:year] %>"
+        data-body="<%= poem[:body].to_s.gsub(/"/, '&quot;') %>"
+      >
+        <div>
+          <div class="page-list-title"><%= poem[:title] %></div>
+          <div class="page-list-meta"><%= poem[:year] %></div>
+        </div>
+        <div class="page-list-meta">—</div>
+      </button>
+    <% end %>
   </div>
 </section>
 
@@ -36,11 +43,13 @@
     poemBody.textContent = body;
     poemModal.classList.add('is-open');
     poemModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   };
 
   const closePoem = () => {
     poemModal.classList.remove('is-open');
     poemModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   };
 
   triggerButtons.forEach((button) => {

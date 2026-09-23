@@ -40,12 +40,25 @@ class PagesController < ApplicationController
     @hero_image = "/hero.JPG"
 
     @work = [
-      { year: "2026", title: "Entrika - Reading the Fine Print", type: "Web Application & Browser Extension", location: "Meguro, Tokyo", description: "A browser-based reading interface and extension for parsing dense language and context in public discourse.", photo: "/260605_DemoDay-9.jpg" },
-      { year: "2026", title: "Am I the Villain?", type: "Web Application", location: "Meguro, Tokyo", description: "An interactive web project exploring uncertainty, causality, and narrative framing.", photo: "" },
-      { year: "2026", title: "OUCH @ Zollgarage - Exhibition", type: "Installation", location: "Zollgarage, Berlin", description: "A spatial installation and live presentation exploring sound, material memory, and public attention.", photo: "" },
-      { year: "2023", title: "Live Painting for Earthquake Relief Event", type: "Performance w/ Batikan Kilicaslan", location: "Gazhane Museum, Istanbul", description: "A live painting performance staged as a communal act of response and care.", photo: "" },
-      { year: "2022", title: "Photographer - Altin Gun", type: "Commission Work", location: "Kucukciftlik Park, Istanbul", description: "Commissioned photographic work for a live performance setting and visual documentation.", photo: "" },
-      { year: "2022", title: "Photographer - Franz Ferdinand", type: "Commission Work", location: "LifePark, Istanbul", description: "A commissioned shoot centered on atmosphere, movement, and audience presence.", photo: "" }
+      { year: "2026", title: "Entrika - Reading the Fine Print", type: "Web Application & Browser Extension", location: "Meguro, Tokyo", photo: "260605_DemoDay-9.jpg", link: "https://entrika.online" },
+      { year: "2026", title: "Am I the Villain?", type: "Web Application", location: "Meguro, Tokyo", photo: "am_I_the_villain.png", link: "https://who-is-the-villain-lhordes-1a13aa3df7f5.herokuapp.com" },
+      { year: "2026", title: "OUCH @ Zollgarage - Exhibition", type: "Installation", location: "Zollgarage, Berlin", photo: "ouch.png", link: "https://example.com/ouch" },
+      { year: "2023", title: "Live Painting for Earthquake Relief Event", type: "Performance w/ Batikan Kilicaslan", location: "Gazhane Museum, Istanbul", photo: "", link: "" },
+      { year: "2022", title: "Photographer - Altin Gun", type: "Commission Work", location: "Kucukciftlik Park, Istanbul", photo: "", link: "" },
+      { year: "2022", title: "Photographer - Franz Ferdinand", type: "Commission Work", location: "LifePark, Istanbul", photo: "", link: "" }
+    ]
+
+    @poems = [
+      {
+        title: "short_lived_quiet_bliss.zip",
+        year: "2024",
+        body: "silver dagger resting on a chest\ninside, there is nothing but the best\nbest one for me,\nregarding the lives I’ve had\n\ntwenty four feels just like yesterday\nand I am not even twenty-three\n\nbought that for your birthday\nfreshly sober-almost-not fully\nyou knew that someone like me, hardly commits\n\nonce I’m twenty-three,\nnothing’ll feel like home to me\neven your arms and the palm trees\nthe smallest town I’ve ever lived in\n\nshouldn’t be holding her\nlike twenty-four’s last december\nhoping to fill all desires,\nby the resting head of a stranger\n\nso with the dopamine the opiates gave me\nI gave you an intimate kiss\npromised to get a little better\nshort-lived,\nquiet bliss."
+      },
+      {
+        title: "night_time_lullaby.mp3",
+        year: "2026",
+        body: "syncope is caused by chemical burns\nit causes the air to turn into smoke\n\non the couch belonging to one of my close friends,\nI ask to myself if this is the end\npoint zero three is all the body needs to feel nothing\nexcept love\nthat is still there, even when you're asleep\n\nalmost touched by the devil\n it sends shivers down your spine\nthe night comes\nand on the screen of an artificial dome,\nsome stars begin to shine"
+      }
     ]
 
     @events = [
